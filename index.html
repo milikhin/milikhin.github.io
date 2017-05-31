@@ -10,6 +10,33 @@
         .p-layout__main {
             padding: 2rem 0;
         }
+
+        .photo-small {
+            float: right;
+            max-width: 400px;
+            margin: 0 0 10px 20px;
+        }
+
+        .about-me p {
+            text-align: justify;
+        }
+
+        @media screen and (min-width: 768px) {
+            .only-mobile {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .photo-small {
+                float: none;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+            .only-desktop {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -39,10 +66,11 @@
     <div class="row">
         <div class="col-12 p-layout__main">
             <div class="p-layout__inner">
-                <section class="about-me" id="about">
+                <section class="about-me u-clearfix" id="about">
                     <h2>
                         About me
                     </h2>
+                    <p class="photo-small only-desktop"><img src="./me.jpg" alt="Me" /></p>
                     <p>
                         Hi, i'm Mikhael, certified web developer and software engineer (Microsoft IT Academy, MongoDB University, learn.javascript.ru, Tomsk state university of control systems and radioelectronics) from Tomsk, Russia.
                     </p>
@@ -50,6 +78,7 @@
                         Currently working as a research scientist and software engineer in Tomsk state university of control systems and radioelectronics. I've got 6 years of web development experience and 3 years of IT-project management experience in both large scale projects,
                         such as developing of the full stack enterprise web-based geographic information systems, and small projects, such as creating websites and landing pages.
                     </p>
+                    <p class="photo-small only-mobile"><img src="./me.jpg" alt="Me" /></p>
                 </section>
                 <section id="skills">
                     <h2>Skills</h2>
