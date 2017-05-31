@@ -3,92 +3,284 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Seabass code editor for Ubuntu Touch by Mikhael Milikhin</title>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
+    <title>Mikhael Milikhin. Certified web developer, software engineer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-1.2.2.min.css" />
+    <style>
+        .p-layout__main {
+            padding: 2rem 0;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="header">
-        <nav>
-            <li class="fork"><a href="https://github.com/milikhin/seabass">View On GitHub</a></li>
-        </nav>
-    </div>
-    <!-- end header -->
-
-    <div class="wrapper">
-
-        <section>
-            <div id="title">
-                <h1>Seabass code editor</h1>
-                <p>for Ubuntu Touch</p>
-                <hr>
-                <span class="credits left">Project maintained by <a href="https://github.com/milikhin">Mikhael Milikhin</a></span>
-                <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+    <header id="navigation" class="p-navigation--light" role="banner">
+        <div class="row">
+            <div class="p-navigation__logo">
+                <a class="p-navigation__link" href="#">
+                  Mikhael Milikhin
+                </a>
             </div>
-
-            <h2>
-              <a id="downloads" class="anchor" href="#downloads" aria-hidden="true">
-                <span aria-hidden="true" class="octicon octicon-link"></span>
-              </a>Downloads
-            </h2>
-            <p>
-                23.09.2016: <b>v0.2.11</b> is now available for all supported platforms
-                <br/>Changelog and older releases are available <a href="https://github.com/milikhin/seabass/releases">on Github</a>
-            </p>
-            <h3>
-              <a id="ut" class="anchor" href="#ut" aria-hidden="true">
-                <span aria-hidden="true" class="octicon octicon-link"></span>
-              </a>Ubuntu Touch (.click)
-            </h3>
-
-            <ul>
-                <li>
-                    Standard version: <a href="https://github.com/milikhin/seabass/releases/download/v0.2.11/seabass.mikhael_0.2.11_armhf.click">download</a>, available at <a href="https://uappexplorer.com/app/seabass.mikhael">Ubuntu Store</a>
-                </li>
-                <li>
-                    Unconfined version: <a href="https://github.com/milikhin/seabass/releases/download/v0.2.11/seabass.mikhael_0.2.11u_armhf.click">download</a>, available at <a href="https://open.uappexplorer.com/app/seabass.mikhael">OpenStore</a>:
-                    <p style="margin-bottom: 0">Installation:</p>
-                    <ul style="margin: 0">
-                        <li>
-                            Uninstall Standard version (if installed)
+            <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Menu</a>
+            <nav class="p-navigation__nav">
+                <span class="u-off-screen">
+                  <a href="#main-content">Jump to main content</a>
+                </span>
+                <ul class="p-navigation__links">
+                    <li class="p-navigation__link"><a href="#">About me</a></li>
+                    <li class="p-navigation__link"><a href="#skills">My skills</a></li>
+                    <li class="p-navigation__link"><a href="#projects">Projects</a></li>
+                    <li class="p-navigation__link"><a href="#contacts">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="row">
+        <div class="col-12 p-layout__main">
+            <div class="p-layout__inner">
+                <section class="about-me" id="about">
+                    <h2>
+                        About me
+                    </h2>
+                    <p>
+                        Hi, i'm Mikhael, certified web developer and software engineer (Microsoft IT Academy, MongoDB University, learn.javascript.ru, Tomsk state university of control systems and radioelectronics) from Tomsk, Russia.
+                    </p>
+                    <p>
+                        Currently working as a research scientist and software engineer in Tomsk state university of control systems and radioelectronics. I've got 6 years of web development experience and 3 years of IT-project management experience in both large scale projects,
+                        such as developing of the full stack enterprise web-based geographic information systems, and small projects, such as creating websites and landing pages.
+                    </p>
+                </section>
+                <section id="skills">
+                    <h2>Skills</h2>
+                    <p>
+                        I'm as working as a full stack web developer or as a leading software engineer.
+                    </p>
+                    <h3>Frontend</h3>
+                    <ul class="p-list--divided">
+                        <li class="p-list__item is-ticked">
+                            Good vanilla JS knowledge (ES5, ES2015, top 30% on upwork.com).
+                            <br/>Certification and courses:
+                            <ul>
+                                <li>
+                                    <a href="https://learn.javascript.ru/courses/js">JS courses at javascript.ru</a>
+                                </li>
+                                <li>
+                                    Microsoft HTML5 Application Development Fundamentals
+                                </li>
+                            </ul>
                         </li>
-                        <li>
-                            <code>
-                                wget https://github.com/milikhin/seabass/releases/download/v0.2.11/seabass.mikhael_0.2.11u_armhf.click;
-                                <br/>pkcon install-local --allow-untrusted seabass.mikhael_0.2.11u_armhf.click;
-                            </code>
+                        <li class="p-list__item is-ticked">
+                            Experienced Dojo (v1.6+) developer
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            AMD and require.js, experienced with creating rich clients and code building/optimization for production
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            Experience in supporting projects on jQuery and ExtJS
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            NodeJS tools: Gulp, Babel, Eslint, Csslint, Csscomb, etc. Familiar with NPM and Bower.
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            HTML5. Developing using modern APIs such as IndexedDB, localStorage, Geolocation, FileAPI, Audio/Video
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            CSS3, top 10% on upwork.com
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            Experience in creating mobile HTML5 apps.
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            Experience with maps APIs such as Here, OpenLayers, Yandex, Google, etc
+                        </li>
+                    </ul>
+                    <h3>
+                        Backend
+                    </h3>
+                    <ul class="p-list--divided">
+                        <li class="p-list__item is-ticked">
+                            Node.js (top 20% on upwork.com), experienced with Express, Koa, MongoDB/Mongoose and their dependencies/additional libs
+                            <br/>Certification and courses:
+                            <ul>
+                                <li>
+                                    <a href="https://learn.javascript.ru/courses/nodejs">NodeJS courses javascript.ru</a>
+                                </li>
+                                <li>
+                                    Microsoft HTML5 Application Development Fundamentals
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            MongoDB (MongoDB for Node.js developers at MongoDB University courses with about 95% score)
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            Can support PHP code (certified PHP-developer at IT-center of Tomsk state university of control systems and radioelectronics)
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            Experience with Oracle (PL/SQL) and Postgresql (PL/PGSQL)
+                        </li>
+                    </ul>
+                    <h3>
+                        Other skills
+                    </h3>
+                    <ul class="p-list--divided">
+                        <li class="p-list__item is-ticked">
+                            Experience in both leading and developing of projects of different scales such as:
+                            <ul>
+                                <li>
+                                    web sites
+                                </li>
+                                <li>
+                                    landing pages
+                                </li>
+                                <li>
+                                    HTML5 apps
+                                </li>
+                                <li>
+                                    enterprise geographic information systems
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            Team lead experience for enterprise software development (up to 8 subordinate employees) of succeeded projects.
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            Lots of experience in supporting "legacy" code written by someone else.
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            Can read, understand and implement ideas from technical literature on Russian and English without a dictionary :-)
                         </li>
                     </ul>
 
-                </li>
-            </ul>
+                </section>
+                <section id="projects">
+                    <h2>
+                        Projects
+                    </h2>
+                    <p>
+                        Some of the projects i've been working on recently.
+                    </p>
 
-            <h3>
-              <a id="desktop" class="anchor" href="#desktop" aria-hidden="true">
-                <span aria-hidden="true" class="octicon octicon-link"></span>
-              </a>Ubuntu Desktop (.deb)
-            </h3>
+                    <h3>
+                        Seabass code editor
+                    </h3>
+                    <p>
+                        Touchscreen-friendly text/code editor for Ubuntu Touch with support for syntax highlighting, autocompletion, autosaving and code beautifying.
+                    </p>
+                    <p class="u-no-margin--bottom">
+                        My tasks:
+                    </p>
+                    <ul class="p-list--divided u-no-margin--top">
+                        <li class="p-list__item is-ticked">
+                            designing UI and making it compatible with phones, tablets and desktops
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            developing from scratch using many awesome Open Source projects and Cordova framework
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            fixing bugs and delivering regular updates
+                        </li>
+                    </ul>
+                    <ul class="p-inline-list--middot">
+                        <li class="p-inline-list__item"><a href="https://github.com/milikhin/seabass">project on Github</a></li>
+                        <li class="p-inline-list__item"><a href="https://uappexplorer.com/app/seabass.mikhael">regular release</a></li>
+                        <li class="p-inline-list__item"><a href="https://open.uappexplorer.com/app/seabass.mikhael">unconfined release</a></li>
+                    </ul>
+                    <p>
+                        <img src="./seabass_0.png" alt="Seabass code editor" />
+                    </p>
 
-            <ul>
-                <li>
-                    amd64: <a href="https://github.com/milikhin/seabass/releases/download/v0.2.11/seabass.mikhael_0.2.11_amd64.deb">download</a>
-                </li>
-            </ul>
-        </section>
+                    <h3>
+                        WGS4 web-based GIS
+                    </h3>
+                    <p>
+                        GIS for automation of managing University campus. Multi-user web-based system with role-based access control and integration with other University's software systems used to manage students personal data.
+                    </p>
+                    <p class="u-no-margin--bottom">
+                        My tasks:
+                    </p>
+                    <ul class="p-list--divided u-no-margin--top">
+                        <li class="p-list__item is-ticked">
+                            prototyping and managing requirements
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            designing UI
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            leading the group of 8 developers
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            developing with MapGuide OS and Dojo
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            maintaining production version and providing techical support for end users
+                        </li>
+                    </ul>
+                    <ul class="p-inline-list--middot">
+                        <li class="p-inline-list__item"><a href="http://aoi-soft.com">WGS4 website</a></li>
+                    </ul>
+                    <p>
+                        <img src="./wgs4.png" alt="WGS4 web-based GIS" />
+                    </p>
 
+                    <h3>
+                        Interior-nk.ru
+                    </h3>
+                    <p>
+                        Interior designer website
+                    </p>
+                    <p class="u-no-margin--bottom">
+                        My tasks:
+                    </p>
+                    <ul class="p-list--divided u-no-margin--top">
+                        <li class="p-list__item is-ticked">
+                            participating in prototyping with designer
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            developing with HTML5
+                        </li>
+                        <li class="p-list__item is-ticked">
+                            providing updates and maintaining production version
+                        </li>
+                    </ul>
+                    <ul class="p-inline-list--middot">
+                        <li class="p-inline-list__item"><a href="http://interior-nk.ru">live version</a></li>
+                    </ul>
+                    <p>
+                        <img src="./interior-nk.png" alt="interior-nk.ru main page" />
+                    </p>
+                </section>
+                <section id="contacts">
+                    <h2>
+                        Contacts
+                    </h2>
+                    <ul class="p-list--divided">
+                        <li class="p-list__item">
+                            Telegram: @mmmikhael
+                        </li>
+                        <li class="p-list__item">
+                            Email: <a href="mailto:mikhael@milikhin.name">mikhael@milikhin.name</a>
+                        </li>
+                        <li class="p-list__item">
+                            Github:<a href="https://github.com/milikhin">@milikhin</a>
+                        </li>
+
+                    </ul>
+                </section>
+            </div>
+        </div>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-
+    <footer class="p-footer" role="contentinfo">
+        <div class="row">
+            &copy; 2017 Mikhael Milikhin, created with love in Siberia using <a href="http://docs.vanillaframework.io/">Vanilla Framework</a>
+            <nav role="navigation">
+                <span class="u-off-screen">
+	              <a href="#">Go to the top of the page</a>
+    	        </span>
+            </nav>
+        </div>
+    </footer>
 </body>
 
 </html>
