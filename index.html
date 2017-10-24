@@ -5,56 +5,40 @@
     <meta charset="utf-8">
     <title>Mikhael Milikhin. Certified web developer, software engineer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-1.2.2.min.css" />
+    <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-1.6.1.min.css" />
     <style>
         .p-layout__main {
             padding: 2rem 0;
         }
 
-        .photo-small {
-            float: right;
-            max-width: 400px;
-            margin: 0 0 10px 20px;
-        }
-
-        .about-me p {
+        .u-align--justify {
             text-align: justify;
         }
 
-        @media screen and (min-width: 768px) {
-            .only-mobile {
-                display: none;
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            .photo-small {
-                float: none;
-                max-width: 100%;
-                margin: 0 auto;
-            }
-            .only-desktop {
-                display: none;
-            }
+        .p-card__header img.p-card__header__image {
+            max-height: 100%;
         }
     </style>
 </head>
 
 <body>
-    <header id="navigation" class="p-navigation--light" role="banner">
+    <header id="navigation" class="p-navigation">
         <div class="row">
-            <div class="p-navigation__logo">
-                <a class="p-navigation__link" href="#">
-                  Mikhael Milikhin
-                </a>
+            <div class="p-navigation__banner">
+                <div class="p-navigation__logo">
+                    <a class="p-navigation__link" href="#">
+                  		Mikhael Milikhin
+                	</a>
+                </div>
+                <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
+                <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">close menu</a>
             </div>
-            <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
-            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Menu</a>
-            <nav class="p-navigation__nav">
+            <nav class="p-navigation__nav" role="menubar">
                 <span class="u-off-screen">
-                  <a href="#main-content">Jump to main content</a>
-                </span>
-                <ul class="p-navigation__links">
+        			<a href="#">Jump to main content</a>
+      			</span>
+                <ul class="p-navigation__links" role="menu">
+                    <li class="p-navigation__link"><a href="./index_ru.html">По-русски</a></li>
                     <li class="p-navigation__link"><a href="#">About me</a></li>
                     <li class="p-navigation__link"><a href="#skills">My skills</a></li>
                     <li class="p-navigation__link"><a href="#projects">Projects</a></li>
@@ -63,6 +47,7 @@
             </nav>
         </div>
     </header>
+
     <div class="row">
         <div class="col-12 p-layout__main">
             <div class="p-layout__inner">
@@ -70,262 +55,314 @@
                     <h2>
                         About me
                     </h2>
-                    <p class="photo-small only-desktop"><img src="./me.jpg" alt="Me" /></p>
-                    <p>
-                        Hi, i'm Mikhael, certified (Microsoft IT Academy, MongoDB University, learn.javascript.ru, Tomsk state university of control systems and radioelectronics) web developer and software engineer from Tomsk, Russia.
-                    </p>
-                    <p>
-                        Currently working as a research scientist and software engineer in 
-						Tomsk state university of control systems and radioelectronics. 
-                      	I've got 6 years of web development experience and 3 years of IT-project 
-                      	management experience in both large scale projects,
-                        such as developing of the full stack enterprise web-based 
-                      	geographic information systems, and small projects, 
-                      	such as creating websites and landing pages.
-                    </p>
-                    <p class="photo-small only-mobile"><img src="./me.jpg" alt="Me" /></p>
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="u-align--justify">
+                                Hi, i'm Mikhael, certified (Microsoft IT Academy, MongoDB University, learn.javascript.ru, Tomsk state university of control systems and radioelectronics) web developer and software engineer from Tomsk, Russia.
+                            </p>
+                            <p class="u-align--justify">
+                                Currently working as a research scientist and software engineer in Tomsk state university of control systems and radioelectronics. I've got 6 years of web development experience and 3 years of IT-project management experience in both large scale projects,
+                                such as developing of the full stack enterprise web-based geographic information systems, and small projects, such as creating websites and landing pages.</p>
+                        </div>
+                        <div class="col-6">
+                            <p>
+                                <img class="p-image--bordered" src="./me.jpg" alt="Me" />
+                            </p>
+                        </div>
+                    </div>
                 </section>
                 <section id="skills">
                     <h2>Skills</h2>
-                    <p>
-                        I work as a full stack web developer or as a software engineer.
-                    </p>
-                    <h3>Frontend</h3>
-                    <ul class="p-list--divided">
-                        <li class="p-list__item is-ticked">
-                            Good vanilla JS knowledge (ES5, ES2015, top 30% on upwork.com).
-                            <br/>Certification and courses:
-                            <ul>
-                                <li>
-                                    <a class="p-link--external" href="https://learn.javascript.ru/courses/js">JS courses at javascript.ru</a>
-                                </li>
-                                <li>
-                                    Microsoft HTML5 Application Development Fundamentals
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            Experienced Dojo (v1.6+) developer
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            AMD and require.js, experienced with creating rich clients and code building/optimization for production
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            Experience in supporting projects on jQuery and ExtJS
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            NodeJS tools: Gulp, Babel, Eslint, Csslint, Csscomb, etc. Familiar with NPM and Bower.
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            HTML5. Developing using modern APIs such as IndexedDB, localStorage, Geolocation, FileAPI, Audio/Video
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            CSS3, top 10% on upwork.com
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            Experience in creating mobile HTML5 apps.
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            Experience with maps APIs such as Here, OpenLayers, Yandex, Google, etc
-                        </li>
-                    </ul>
-                    <h3>
-                        Backend
-                    </h3>
-                    <ul class="p-list--divided">
-                        <li class="p-list__item is-ticked">
-                            Node.js (top 20% on upwork.com), experienced with Express, Koa, MongoDB/Mongoose and their dependencies/additional libs
-                            <br/>Certification and courses:
-                            <ul>
-                                <li>
-                                    <a class="p-link--external" href="https://learn.javascript.ru/courses/nodejs">NodeJS courses javascript.ru</a>
-                                </li>
-                                <li>
-                                    Microsoft HTML5 Application Development Fundamentals
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            MongoDB (MongoDB for Node.js developers at MongoDB University courses with about 95% score)
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            Can support PHP code (certified as PHP-developer at IT-center of Tomsk state university of control systems and radioelectronics)
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            Experience with Oracle (PL/SQL) and Postgresql (PL/PGSQL)
-                        </li>
-                    </ul>
-                    <h3>
-                        Other skills
-                    </h3>
-                    <ul class="p-list--divided">
-                        <li class="p-list__item is-ticked">
-                            Experience in both leading and developing of projects of different scales such as:
-                            <ul>
-                                <li>
-                                    web sites
-                                </li>
-                                <li>
-                                    landing pages
-                                </li>
-                                <li>
-                                    HTML5 apps
-                                </li>
-                                <li>
-                                    enterprise geographic information systems
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            Team lead experience for enterprise software development (up to 8 subordinate employees) of succeeded projects.
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            Lots of experience in supporting "legacy" code written by someone else.
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            Can read, understand and implement ideas from technical literature on Russian and English without a dictionary :-)
-                        </li>
-                    </ul>
+                    <div class="row">
+                        <div class="col-7">
+                            <p class="u-align--justify">
+                                I'm as working as a full stack web developer or as a leading software engineer. I&nbsp;can also lead a group of developers: manage team tasks and comply with deadlines.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="p-card">
+                                <h3 class="p-card__title">
+                                    Frontend</h3>
+                                <div class="p-card__content">
+                                    <ul class="p-list--divided">
+                                        <li class="p-list__item is-ticked">
+                                            Good vanilla JS knowledge (ES5, ES2015, top 30% on upwork.com).
+                                            <br/>Certification and courses:
+                                            <ul>
+                                                <li>
+                                                    <a class="p-link--external" href="https://learn.javascript.ru/courses/js">JS courses at javascript.ru</a>
+                                                </li>
+                                                <li>
+                                                    Microsoft HTML5 Application Development Fundamentals
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            Experienced Dojo (v1.6+) developer
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            AMD and require.js, experienced with creating rich clients and code building/optimization for production
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            Experience in supporting projects on jQuery and ExtJS
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            NodeJS tools: Gulp, Babel, Eslint, Csslint, Csscomb, etc. Familiar with NPM and Bower.
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            HTML5. Developing using modern APIs such as IndexedDB, localStorage, Geolocation, FileAPI, Audio/Video
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            CSS3, top 10% on upwork.com
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            Experience in creating mobile HTML5 apps.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-card">
+                                <h3 class="p-card__title">
+                                    Backend
+                                </h3>
+                                <div class="p-card__content">
 
+                                    <ul class="p-list--divided">
+                                        <li class="p-list__item is-ticked">
+                                            Node.js (top 20% on upwork.com), experienced with Express, Koa, MongoDB/Mongoose and their dependencies/additional libs
+                                            <br/>Certification and courses:
+                                            <ul>
+                                                <li>
+                                                    <a class="p-link--external" href="https://learn.javascript.ru/courses/nodejs">NodeJS courses javascript.ru</a>
+                                                </li>
+                                                <li>
+                                                    Microsoft HTML5 Application Development Fundamentals
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            MongoDB (MongoDB for Node.js developers at MongoDB University courses with about 95% score)
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            Can support PHP code (certified as PHP-developer at IT-center of Tomsk state university of control systems and radioelectronics)
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            Experience with Oracle (PL/SQL) and Postgresql (PL/PGSQL)
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            Experience with maps APIs such as Here, OpenLayers, Yandex, Google, etc
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="p-card">
+                                <h3 class="p-card__title">
+                                    Other skills
+                                </h3>
+                                <div class="p-card__content">
+
+                                    <ul class="p-list--divided">
+                                        <li class="p-list__item is-ticked">
+                                            Experience in both leading and developing of projects of different scales such as:
+                                            <ul>
+                                                <li>
+                                                    web sites
+                                                </li>
+                                                <li>
+                                                    landing pages
+                                                </li>
+                                                <li>
+                                                    HTML5 apps
+                                                </li>
+                                                <li>
+                                                    enterprise geographic information systems
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            Team lead experience for enterprise software development (up to 8 subordinate employees) of succeeded projects.
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            Lots of experience in supporting "legacy" code written by someone else.
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            Can read, understand and implement ideas from technical literature on Russian and English without a dictionary
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
                 <section id="projects">
                     <h2>
                         Projects
                     </h2>
-                    <p>
-                        Some of the projects i've been working on recently.
-                    </p>
+                    <div class="row">
+                        <div class="col-7">
+                            <p>
+                                Some of the projects i've been working on recently.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="p-card">
+                                <h3 class="p-card__title">Seabass code editor</h3>
+                                <div class="p-card__content">
+                                    <p>
+                                        The best code editor for Ubuntu Touch with support for syntax highlighting, autocompletion, autosaving and code beautifying.
+                                    </p>
+                                    <p>
+                                        <img class="p-image--bordered" src="./seabass_0.png" alt="Seabass code editor" />
+                                    </p>
+                                    <p class="u-no-margin--bottom">
+                                        My tasks:
+                                    </p>
+                                    <ul class="p-list--divided u-no-margin--top">
+                                        <li class="p-list__item is-ticked">
+                                            designing UI and making it compatible with phones, tablets and desktops
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            developing from scratch using many awesome Open Source projects and Cordova framework
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            making cross-platform app available for Chrome OS and Ubuntu Touch users
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            fixing bugs and delivering regular updates
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            keeping Cordova for Ubuntu touch framework components updated
+                                        </li>
+                                    </ul>
+                                    <ul class="p-inline-list--middot">
+                                        <li class="p-inline-list__item"><a class="p-link--external" href="https://github.com/milikhin/seabass">project on Github</a></li>
+                                        <li class="p-inline-list__item"><a class="p-link--external" href="https://uappexplorer.com/app/seabass.mikhael">current release</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
-                    <h3>
-                        Seabass code editor
-                    </h3>
-                    <p>
-                        Touchscreen-friendly text/code editor for Ubuntu Touch with support for syntax highlighting, autocompletion, autosaving and code beautifying.
-                    </p>
-                    <p class="u-no-margin--bottom">
-                        My tasks:
-                    </p>
-                    <ul class="p-list--divided u-no-margin--top">
-                        <li class="p-list__item is-ticked">
-                            designing UI and making it compatible with phones, tablets and desktops
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            developing from scratch using many awesome Open Source projects and Cordova framework
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            fixing bugs and delivering regular updates
-                        </li>
-                    </ul>
-                    <ul class="p-inline-list--middot">
-                        <li class="p-inline-list__item"><a class="p-link--external" href="https://github.com/milikhin/seabass">project on Github</a></li>
-                        <li class="p-inline-list__item"><a class="p-link--external" href="https://uappexplorer.com/app/seabass.mikhael">current release</a></li>                        
-                    </ul>
-                    <p>
-                        <img src="./seabass_0.png" alt="Seabass code editor" />
-                    </p>
+                        <div class="col-6">
+                            <div class="p-card">
+                                <h3 class="p-card__title">WGS4 web-based GIS</h3>
 
-                    <h3>
-                        WGS4 web-based GIS
-                    </h3>
-                    <p>
-                        GIS for automation of managing University campus. Multi-user web-based system with role-based access control and integration with other University's software systems used to manage students personal data.
-                    </p>
-                    <p class="u-no-margin--bottom">
-                        My tasks:
-                    </p>
-                    <ul class="p-list--divided u-no-margin--top">
-                        <li class="p-list__item is-ticked">
-                            prototyping and managing requirements
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            designing UI
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            leading the group of 8 developers
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            developing with MapGuide OS and Dojo
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            maintaining production version and providing techical support for end users
-                        </li>
-                    </ul>
-                    <ul class="p-inline-list--middot">
-                        <li class="p-inline-list__item"><a class="p-link--external" href="http://aoi-soft.com">WGS4 website</a></li>
-                    </ul>
-                    <p>
-                        <img src="./wgs4.png" alt="WGS4 web-based GIS" />
-                    </p>
-
-                    <h3>
-                        Cpz-nk.ru
-                    </h3>
-                    <p>
-                        Company group's website
-                    </p>
-                    <p class="u-no-margin--bottom">
-                        My tasks:
-                    </p>
-                    <ul class="p-list--divided u-no-margin--top">
-                        <li class="p-list__item is-ticked">
-                            participating in prototyping with designer
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            developing backend with Node.JS (Koa) and MongoDB
-                        </li>
-                      	<li class="p-list__item is-ticked">
-                            developing frontend with HTML5 and vanilla JS (require.js)
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            providing updates and technical support, maintaining production version
-                        </li>
-                    </ul>
-                    <ul class="p-inline-list--middot">
-                        <li class="p-inline-list__item"><a class="p-link--external" href="http://cpz-nk.ru">live version</a></li>
-                    </ul>
-                    <p>
-                        <img src="./cpz-nk.png" alt="cpz-nk.ru main page" />
-                    </p>
-                  	<h3>
-                        Julistudio
-                    </h3>
-                    <p>
-                        Style expert website
-                    </p>
-                    <p class="u-no-margin--bottom">
-                        My tasks:
-                    </p>
-                    <ul class="p-list--divided u-no-margin--top">
-                        <li class="p-list__item is-ticked">
-                            prototyping
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            developing frontend with HTML/CSS
-                        </li>
-                        <li class="p-list__item is-ticked">
-                            maintenance and providing updates
-                        </li>
-                    </ul>
-                    <ul class="p-inline-list--middot">
-                        <li class="p-inline-list__item"><a class="p-link--external" href="http://r5m-team.github.io/julistudio">archive version</a></li>
-                    </ul>
-                    <p>
-                        <img src="./julistudio-ru.png" alt="julistudio.ru main page" />
-                    </p>
+                                <div class="p-card__content">
+                                    <p>
+                                        GIS for automation of managing University campus. Multi-user web-based system with role-based access control and integration with other University's software systems used to manage students personal data.
+                                    </p>
+                                    <p>
+                                        <img class="p-image--bordered" src="./wgs4.png" alt="WGS4 web-based GIS" />
+                                    </p>
+                                    <p class="u-no-margin--bottom">
+                                        My tasks:
+                                    </p>
+                                    <ul class="p-list--divided u-no-margin--top">
+                                        <li class="p-list__item is-ticked">
+                                            prototyping and managing requirements
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            designing UI
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            leading the group of 8 developers
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            developing with MapGuide OS and Dojo
+                                        </li>
+                                        <li class="p-list__item is-ticked">
+                                            maintaining production version and providing technical support for end users
+                                        </li>
+                                    </ul>
+                                    <ul class="p-inline-list--middot">
+                                        <li class="p-inline-list__item"><a class="p-link--external" href="http://aoi-soft.com">WGS4 website</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="p-card">
+                                <h3 class="p-card__title">cpz-nk.ru</h3>
+                                <div class="p-card__content">
+                                    <p>
+                                        Company group's website
+                                    </p>
+                                    <p>
+                                        <img class="p-image--bordered" src=" ./cpz-nk.png " alt="cpz-nk.ru front page " />
+                                    </p>
+                                    <ul class="p-list--divided u-no-margin--top ">
+                                        <li class="p-list__item is-ticked ">
+                                            participating in prototyping with designer
+                                        </li>
+                                        <li class="p-list__item is-ticked ">
+                                            developing backend with Node.JS (Koa) and MongoDB
+                                        </li>
+                                        <li class="p-list__item is-ticked ">
+                                            developing frontend with HTML5 and vanilla JS (require.js)
+                                        </li>
+                                        <li class="p-list__item is-ticked ">
+                                            providing updates and technical support, maintaining production version
+                                        </li>
+                                    </ul>
+                                    <ul class="p-inline-list--middot ">
+                                        <li class="p-inline-list__item "><a class="p-link--external " href="http://cpz-nk.ru ">live version</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 ">
+                            <div class="p-card ">
+                                <h3 class="p-card__title ">julistudio.ru</h3>
+                                <div class="p-card__content ">
+                                    <p>
+                                        Style expert website
+                                    </p>
+                                    <p>
+                                        <img class="p-image--bordered " src="./julistudio-ru.png " alt="julistudio.ru front page " />
+                                    </p>
+                                    <ul class="p-list--divided u-no-margin--top ">
+                                        <li class="p-list__item is-ticked ">
+                                            prototyping
+                                        </li>
+                                        <li class="p-list__item is-ticked ">
+                                            developing frontend with HTML/CSS
+                                        </li>
+                                        <li class="p-list__item is-ticked ">
+                                            maintenance and providing updates
+                                        </li>
+                                    </ul>
+                                    <ul class="p-inline-list--middot ">
+                                        <li class="p-inline-list__item "><a class="p-link--external " href="http://r5m-team.github.io/julistudio ">archive version</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
-                <section id="contacts">
+                <section id="contacts ">
                     <h2>
                         Contacts
                     </h2>
-                    <ul class="p-list--divided">
-                        <li class="p-list__item">
+                    <ul class="p-list--divided ">
+                        <li class="p-list__item ">
                             Telegram: @mmmikhael
                         </li>
-                        <li class="p-list__item">
-                            Email: <a href="mailto:mikhael@milikhin.name">mikhael@milikhin.name</a>
+                        <li class="p-list__item ">
+                            Email: <a href="mailto:mikhael@milikhin.name ">mikhael@milikhin.name</a>
                         </li>
-                        <li class="p-list__item">
-                            Github: <a class="p-link--external" href="https://github.com/milikhin">@milikhin</a>
+                        <li class="p-list__item ">
+                            Github: <a class="p-link--external " href="https://github.com/milikhin ">@milikhin</a>
                         </li>
 
                     </ul>
