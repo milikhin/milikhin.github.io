@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>WebGL demo for Rubius</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+</head>
+
+<body>
+    <canvas class="app-canvas" id="app-canvas"></canvas>
+    <canvas class="app-canvas app-canvas--text" id="text-canvas"></canvas>
+    <div class="app-controls">
+        <ol>
+            <li>
+                <label>
+                    Load image:<br/>
+                    <input type="file" id="app-image-input"/>
+                </label>
+            </li>
+            <li>
+                Select pointer mode:<br/>
+                <label><input class="app-mode-input" type="radio" name="mode" value="pan"> Pan</label><br/>
+                <label><input class="app-mode-input" type="radio" name="mode" value="add"> Add points</label><br/>
+                <label><input class="app-mode-input" type="radio" name="mode" value="move"> Move points</label><br/>
+              	<label><input class="app-mode-input" type="radio" name="mode" value="remove"> Remove points</label>
+            </li>
+          	<li>
+              	<a href="#" id="app-download-points">Download points in JSON!</a>
+          	</li>
+        </ol>
+    </div>
+  	<div class="image-controls">
+      	<button id="zoom-out" title="Zoom out from the center of the window">
+          -
+      	</button>
+      	<button id="zoom-reset" title="Load initial image scale and position">
+          Initial scale
+      	</button>
+      	<button id="zoom-in" title="Zoom in to the center of the window">
+          +
+      	</button>      
+  	</div>
+
+    <script src="dist/app.js"></script>
+</body>
+
+</html>

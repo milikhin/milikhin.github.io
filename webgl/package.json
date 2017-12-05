@@ -1,0 +1,11 @@
+{
+  "name": "webgl-demo-rubius",
+  "version": "0.1.0",
+  "description": "WebGL demo project for Rubius job applience",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mikhael@milikhin.name",
+  "license": "MIT"
+}
