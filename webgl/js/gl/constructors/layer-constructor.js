@@ -17,6 +17,7 @@ class LayerConstructor {
             translation: [0, 0],
             zoom: [1, 1]
         };
+      	this._gamma = 1;
       	
       	this.programs = {
           	points: glUtils.createProgram(gl, shaders.points.vertex, shaders.points.fragment),
@@ -29,17 +30,19 @@ class LayerConstructor {
                 resolutionLocation: gl.getUniformLocation(this.programs.points, "u_resolution"),
                 translationLocation: gl.getUniformLocation(this.programs.points, "u_translation"),
                 scaleLocation: gl.getUniformLocation(this.programs.points, "u_scale"),
-              	colorUniformLocation: gl.getUniformLocation(this.programs.points, "u_color")
+              	colorUniformLocation: gl.getUniformLocation(this.programs.points, "u_color")              	
             },
           	image: {
               	positionAttributeLocation: gl.getAttribLocation(this.programs.image, "a_position"),
                 resolutionLocation: gl.getUniformLocation(this.programs.image, "u_resolution"),
                 translationLocation: gl.getUniformLocation(this.programs.image, "u_translation"),
                 scaleLocation: gl.getUniformLocation(this.programs.image, "u_scale"),
-              	texCoordLocation: gl.getAttribLocation(this.programs.image, "a_texCoord")        
+              	texCoordLocation: gl.getAttribLocation(this.programs.image, "a_texCoord"),
+              	gammaLocation: gl.getUniformLocation(this.programs.image, "u_gamma")
             }
         };
       
+      	
         this.buffers = {
           	points: {
               	positionBuffer: gl.createBuffer()
@@ -137,7 +140,8 @@ class LayerConstructor {
         gl.uniform2f(this.locations.image.resolutionLocation, gl.canvas.width, gl.canvas.height);
         gl.uniform2fv(this.locations.image.translationLocation, this._transformation.translation);
         gl.uniform2fv(this.locations.image.scaleLocation, this._transformation.zoom);
-
+      	gl.uniform1f(this.locations.image.gammaLocation, this._gamma);
+      	
         // provide texture coordinates for the rectangle        
         gl.bindBuffer(gl.ARRAY_BUFFER, this.buffers.image.texCoordBuffer);
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([

@@ -204,7 +204,7 @@ class AppEvent {
 			uniform vec2 u_translation;
             uniform vec2 u_resolution;
 			uniform vec2 u_scale;
-
+			
             void main() {
 				// transform pixels to clipspace
 				// for image we apply scaling and translation                
@@ -218,10 +218,13 @@ class AppEvent {
       	fragment: `
 			precision mediump float;
             uniform sampler2D u_image;
+			uniform float u_gamma;
             varying vec2 v_texCoord;
+			vec4 originColor;
             
             void main() {
-                gl_FragColor = texture2D(u_image, v_texCoord);
+				originColor = texture2D(u_image, v_texCoord);
+                gl_FragColor = vec4(pow(originColor.r, u_gamma), pow(originColor.g, u_gamma), pow(originColor.b, u_gamma), originColor.a);
             } 	
 		`
     },
@@ -348,6 +351,14 @@ class App {
         });
       	document.getElementById('zoom-reset').addEventListener('click', function () {
             __WEBPACK_IMPORTED_MODULE_2__utils_app_event_js__["a" /* default */].dispatch('transformation-reset', {});
+        });
+      
+      	document.getElementById('gamma-filter').addEventListener('change', function () {
+          	let value = this.value;
+          	document.getElementById('gamma-value').innerHTML = value;
+          	__WEBPACK_IMPORTED_MODULE_2__utils_app_event_js__["a" /* default */].dispatch('gamma-filter', {
+                value: value
+            });
         });
     }
 
@@ -637,12 +648,20 @@ class GlApp {
 
       	__WEBPACK_IMPORTED_MODULE_1__utils_app_event_js__["a" /* default */].on('transformation-reset', function (evt) {
             let pointsTranslation = self.layerConstructor.transform([0, 0], 1);
+          	self.layerConstructor._gamma = 1;
+          	document.getElementById('gamma-value').innerHTML = 1;
+          	document.getElementById('gamma-filter').value = 1;
             self.render();
         });
       
       	// re-render when canvas resized
         __WEBPACK_IMPORTED_MODULE_1__utils_app_event_js__["a" /* default */].on('canvas-resize', function (evt) {
             self.render();
+        });
+      
+      	__WEBPACK_IMPORTED_MODULE_1__utils_app_event_js__["a" /* default */].on('gamma-filter', function (evt) {
+            self.layerConstructor._gamma = evt.detail.value;
+          	self.render();
         });
 
       	// Move, Zoom operations
@@ -692,7 +711,10 @@ class GlApp {
         let y = (clientCoords[1] - pointsTranslation[1]) / zoom;
 
         this.points.forEach(function (point, index) {
-            if ((point[0] + this.POINT_WIDTH / 2 >= x) && (point[0] - this.POINT_WIDTH / 2 <= x) && (point[1] + this.POINT_WIDTH / 2 >= y) && (point[1] - this.POINT_WIDTH /2 <= y)) {
+            if ((point[0] >= x - this.POINT_WIDTH / 2 / zoom) && 
+                (point[0] <= x + this.POINT_WIDTH / 2 / zoom) && 
+              	(point[1] >= y - this.POINT_WIDTH / 2 / zoom) &&
+              	(point[1] <= y + this.POINT_WIDTH / 2 / zoom)) {
                 hoveredPoint = index;
             }
         }, this);
@@ -808,6 +830,7 @@ class LayerConstructor {
             translation: [0, 0],
             zoom: [1, 1]
         };
+      	this._gamma = 1;
       	
       	this.programs = {
           	points: __WEBPACK_IMPORTED_MODULE_3__gl_utils_js__["a" /* default */].createProgram(gl, __WEBPACK_IMPORTED_MODULE_0__shaders_js__["a" /* default */].points.vertex, __WEBPACK_IMPORTED_MODULE_0__shaders_js__["a" /* default */].points.fragment),
@@ -820,17 +843,19 @@ class LayerConstructor {
                 resolutionLocation: gl.getUniformLocation(this.programs.points, "u_resolution"),
                 translationLocation: gl.getUniformLocation(this.programs.points, "u_translation"),
                 scaleLocation: gl.getUniformLocation(this.programs.points, "u_scale"),
-              	colorUniformLocation: gl.getUniformLocation(this.programs.points, "u_color")
+              	colorUniformLocation: gl.getUniformLocation(this.programs.points, "u_color")              	
             },
           	image: {
               	positionAttributeLocation: gl.getAttribLocation(this.programs.image, "a_position"),
                 resolutionLocation: gl.getUniformLocation(this.programs.image, "u_resolution"),
                 translationLocation: gl.getUniformLocation(this.programs.image, "u_translation"),
                 scaleLocation: gl.getUniformLocation(this.programs.image, "u_scale"),
-              	texCoordLocation: gl.getAttribLocation(this.programs.image, "a_texCoord")        
+              	texCoordLocation: gl.getAttribLocation(this.programs.image, "a_texCoord"),
+              	gammaLocation: gl.getUniformLocation(this.programs.image, "u_gamma")
             }
         };
       
+      	
         this.buffers = {
           	points: {
               	positionBuffer: gl.createBuffer()
@@ -928,7 +953,8 @@ class LayerConstructor {
         gl.uniform2f(this.locations.image.resolutionLocation, gl.canvas.width, gl.canvas.height);
         gl.uniform2fv(this.locations.image.translationLocation, this._transformation.translation);
         gl.uniform2fv(this.locations.image.scaleLocation, this._transformation.zoom);
-
+      	gl.uniform1f(this.locations.image.gammaLocation, this._gamma);
+      	
         // provide texture coordinates for the rectangle        
         gl.bindBuffer(gl.ARRAY_BUFFER, this.buffers.image.texCoordBuffer);
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([

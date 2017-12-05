@@ -6,6 +6,8 @@ html {
     overflow: hidden;
 }
 
+/* Canvas positioning */
+
 .app-canvas {
     height: 100%;
     width: 100%;
@@ -17,8 +19,18 @@ html {
     top: 10px;
     z-index: 10;
     padding: 10px;
-  	background: white;
-  	border-radius: 3px;
+    background: white;
+    border-radius: 3px;
+    width: 220px;
+    border: solid 1px #ccc;
+}
+
+.app-controls__list {
+    padding: 0 0 0 20px;
+    margin: 0;
+}
+.app-controls__list li {
+    margin-top: 10px;
 }
 
 #text-canvas {
@@ -42,12 +54,47 @@ html {
     cursor: crosshair;
 }
 
+/* Bottom right controls block */
 .image-controls {
-  	position: absolute;
+    position: absolute;
     right: 10px;
     bottom: 10px;
     border-radius: 3px;
-  	background: white;
-  	z-index: 20;
-  	padding: 10px;
+    background: white;
+    z-index: 20;
+    padding: 10px;
+    border: solid 1px #ccc;
+}
+
+.image-controls__slider--wrapper {
+    padding: 0;
+  	margin: 0 0 10px 0;
+}
+
+.image-controls__slider {
+    width: 218px;
+    margin: 0;
+}
+
+.image-controls__value {
+    vertical-align: top;
+}
+
+.image-controls__small-button {
+    width: 45px;
+    box-sizing: border-box;
+    float: left;
+}
+.image-controls__big-button {
+    width: 120px;
+    margin: 0 5px;
+    float: left;
+    box-sizing: border-box;
+}
+
+/*  */
+.app-controls h2 {
+    margin: 0;
+    text-align: center;
+    font-size: 1.25rem;
 }

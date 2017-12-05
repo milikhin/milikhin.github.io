@@ -64,6 +64,14 @@ class App {
       	document.getElementById('zoom-reset').addEventListener('click', function () {
             appEvent.dispatch('transformation-reset', {});
         });
+      
+      	document.getElementById('gamma-filter').addEventListener('change', function () {
+          	let value = this.value;
+          	document.getElementById('gamma-value').innerHTML = value;
+          	appEvent.dispatch('gamma-filter', {
+                value: value
+            });
+        });
     }
 
     _handleMouseClickEvents() {

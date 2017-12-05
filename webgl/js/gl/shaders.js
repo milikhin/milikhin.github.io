@@ -12,7 +12,7 @@ export default {
 			uniform vec2 u_translation;
             uniform vec2 u_resolution;
 			uniform vec2 u_scale;
-
+			
             void main() {
 				// transform pixels to clipspace
 				// for image we apply scaling and translation                
@@ -26,10 +26,13 @@ export default {
       	fragment: `
 			precision mediump float;
             uniform sampler2D u_image;
+			uniform float u_gamma;
             varying vec2 v_texCoord;
+			vec4 originColor;
             
             void main() {
-                gl_FragColor = texture2D(u_image, v_texCoord);
+				originColor = texture2D(u_image, v_texCoord);
+                gl_FragColor = vec4(pow(originColor.r, u_gamma), pow(originColor.g, u_gamma), pow(originColor.b, u_gamma), originColor.a);
             } 	
 		`
     },

@@ -67,12 +67,20 @@ class GlApp {
 
       	appEvent.on('transformation-reset', function (evt) {
             let pointsTranslation = self.layerConstructor.transform([0, 0], 1);
+          	self.layerConstructor._gamma = 1;
+          	document.getElementById('gamma-value').innerHTML = 1;
+          	document.getElementById('gamma-filter').value = 1;
             self.render();
         });
       
       	// re-render when canvas resized
         appEvent.on('canvas-resize', function (evt) {
             self.render();
+        });
+      
+      	appEvent.on('gamma-filter', function (evt) {
+            self.layerConstructor._gamma = evt.detail.value;
+          	self.render();
         });
 
       	// Move, Zoom operations
@@ -122,7 +130,10 @@ class GlApp {
         let y = (clientCoords[1] - pointsTranslation[1]) / zoom;
 
         this.points.forEach(function (point, index) {
-            if ((point[0] + this.POINT_WIDTH / 2 >= x) && (point[0] - this.POINT_WIDTH / 2 <= x) && (point[1] + this.POINT_WIDTH / 2 >= y) && (point[1] - this.POINT_WIDTH /2 <= y)) {
+            if ((point[0] >= x - this.POINT_WIDTH / 2 / zoom) && 
+                (point[0] <= x + this.POINT_WIDTH / 2 / zoom) && 
+              	(point[1] >= y - this.POINT_WIDTH / 2 / zoom) &&
+              	(point[1] <= y + this.POINT_WIDTH / 2 / zoom)) {
                 hoveredPoint = index;
             }
         }, this);
