@@ -407,9 +407,7 @@ class App {
             evt.preventDefault();
             let deltaY = evt.deltaY;
             __WEBPACK_IMPORTED_MODULE_2__utils_app_event_js__["a" /* default */].dispatch('zoom-image', {
-                delta: deltaY > 0
-                    ? -1
-                    : 1,
+                delta: deltaY > 0 ? -1 : 1,
                 x: evt.clientX,
                 y: evt.clientY
             });
@@ -612,7 +610,7 @@ class GlApp {
   	init() {
       	const self = this;
       	this.image = new Image();
-        this.image.src = "/image.jpg";
+        this.image.src = "./image.jpg";
         
       	// wait until image is loaded and then render!
         this.image.onload = function () {

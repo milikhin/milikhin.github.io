@@ -122,9 +122,7 @@ class App {
             evt.preventDefault();
             let deltaY = evt.deltaY;
             appEvent.dispatch('zoom-image', {
-                delta: deltaY > 0
-                    ? -1
-                    : 1,
+                delta: deltaY > 0 ? -1 : 1,
                 x: evt.clientX,
                 y: evt.clientY
             });

@@ -40,7 +40,7 @@ class GlApp {
   	init() {
       	const self = this;
       	this.image = new Image();
-        this.image.src = "/image.jpg";
+        this.image.src = "./image.jpg";
         
       	// wait until image is loaded and then render!
         this.image.onload = function () {
