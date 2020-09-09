@@ -2,102 +2,463 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Mikhael Milikhin. Web developer and software engineer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-1.6.1.min.css" />
-    <style>
-        .p-layout__main {
-            padding: 2rem 0;
-        }
+  <meta charset="utf-8">
+  <title>Mikhail Milikhin. Web developer and software engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-2.17.0.min.css" />
+  <style>
+    /* Fix for an issue with incorrect renderring of middot lists in Firefox */
+    .p-inline-list--middot .p-inline-list__item {
+      display: inline-block;
+    }
 
-        .u-align--justify {
-            text-align: justify;
-        }
+    .p-inline-list--middot .p-inline-list__item::after {
+      top: 0.5em;
+      right: -0.8rem;
+    }
 
-        .p-card__header img.p-card__header__image {
-            max-height: 100%;
-        }
-    </style>
+    /* Thin footer with a top border */
+    .footer {
+      border-top: solid 1px #ccc;
+      padding: 0.5rem 0;
+    }
+
+    /* Make navigation fixed at the top of the page */
+    .p-navigation {
+      position: fixed;
+      width: 100%;
+      border-bottom: solid 1px #ccc;
+    }
+
+    .row--first {
+      padding-top: 4.1rem;
+      /* 3rem (header) + 1.1rem (standard <p> padding) */
+    }
+
+    .anchor {
+      position: relative;
+      top: -3rem;
+    }
+
+    /* add inline headings to inline lists */
+    .inline-list-heading,
+    p:not([class*="p-heading--"]):not([class*="p-muted-heading"]) + p.inline-list-heading {
+      margin: 0;
+      padding: 0 0.5em 0 0;
+      float: left;
+    }
+  </style>
 </head>
 
 <body>
-    <header id="navigation" class="p-navigation">
-        <div class="row">
-            <div class="p-navigation__banner">
-                <div class="p-navigation__logo">
-                    <a class="p-navigation__link" href="#">
-                  		Mikhael Milikhin
-                	</a>
-                </div>
-                <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
-                <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">close menu</a>
-            </div>
-            <nav class="p-navigation__nav" role="menubar">
-                <span class="u-off-screen">
-        			<a href="#">Jump to main content</a>
-      			</span>
-                <ul class="p-navigation__links" role="menu">
-                    <li class="p-navigation__link"><a href="./index_ru.html">По-русски</a></li>
-                    <!-- <li class="p-navigation__link"><a href="#">About me</a></li>
-                    <li class="p-navigation__link"><a href="#contacts">Contacts</a></li> -->
-                </ul>
-            </nav>
+  <header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+      <div class="p-navigation__banner">
+        <div class="p-navigation__logo">
+          <a class="p-navigation__item" href="#"
+            style="line-height: 1.5rem; font-size: large; color: #111; padding: 0.75rem 1rem 0.75rem 0;">
+            Mikhail Milikhin
+          </a>
         </div>
-    </header>
-
-    <div class="row">
-        <div class="col-12 p-layout__main">
-            <div class="p-layout__inner">
-                <section class="about-me u-clearfix" id="about">
-                    <h2>
-                        About me
-                    </h2>
-                    <div class="row">
-                        <div class="col-6">
-                            <p>
-                                Hi, i'm Mikhael, web developer and software engineer from Tomsk, Russia.
-                            </p>
-                            <p>
-                                I've got over 7 years of web development experience and 3 years of IT-project management experience in both large scale projects,
-                                such as developing of the full stack enterprise web-based geographic information systems, and small projects, such as creating websites and landing pages.</p>
-                        </div>
-                        <div class="col-6">
-                            <p>
-                                <img class="p-image--bordered" src="./me.jpg" alt="Me" />
-                            </p>
-                        </div>
-                    </div>
-                </section>
-                <section id="contacts">
-                    <h2>
-                        Contacts
-                    </h2>
-                    <ul class="p-list--divided ">
-                        <li class="p-list__item ">
-                            Telegram: @mmmikhael
-                        </li>
-                        <li class="p-list__item ">
-                            Email: <a href="mailto:mikhael@milikhin.name ">mikhael@milikhin.name</a>
-                        </li>
-                        <li class="p-list__item ">
-                            Github: <a class="p-link--external " href="https://github.com/milikhin ">@milikhin</a>
-                        </li>
-                    </ul>
-                </section>
-            </div>
-        </div>
+        <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
+        <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Close menu</a>
+      </div>
+      <nav class="p-navigation__nav">
+        <span class="u-off-screen">
+          <a href="#main-content">Jump to main content</a>
+        </span>
+        <ul class="p-navigation__items" role="menu">
+          <li class="p-navigation__item" role="menuitem">
+            <a class="p-navigation__link" href="#skills">Skills</a>
+          </li>
+          <li class="p-navigation__item" role="menuitem">
+            <a class="p-navigation__link" href="#experience">Experience</a>
+          </li>
+          <li class="p-navigation__item" role="menuitem">
+            <a class="p-navigation__link" href="#open-source">Open source</a>
+          </li>
+          <li class="p-navigation__item" role="menuitem">
+            <a class="p-navigation__link" href="#contacts">Contacts</a>
+          </li>
+          <li class="p-navigation__item" role="menuitem">
+            <a class="p-navigation__link" href="index_ru.html">По-русски</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <footer class="p-footer" role="contentinfo">
+  </header>
+
+  <div class="row row--first">
+    <div class="col-12">
+      <section id="about">
+        <h2>
+          About me
+        </h2>
         <div class="row">
-            &copy; 2020 Mikhael Milikhin, created using <a href="http://vanillaframework.io/">Vanilla Framework</a>
-            <nav role="navigation">
-                <span class="u-off-screen">
-	              <a href="#">Go to the top of the page</a>
-    	        </span>
-            </nav>
+          <div class="col-7">
+            <p>
+              Hi, i'm Mikhail, web developer and software engineer with 9+ years of experience
+              from Kaliningrad, Russia.
+            </p>
+            <p>
+              I love web and passionate about building reliable and maintainable software,
+              but I also know the value of prioritizing business and customers over technologies.
+            </p>
+            <p>
+              I've worked on both large scale projects,
+              such as enterprise web-based GIS,
+              and small projects, such as corporate web-services and reporting systems.</p>
+          </div>
+          <div class="col-5">
+            <p>
+              <img class="p-image--bordered" src="./img/me.jpg" alt="Me" />
+            </p>
+          </div>
         </div>
-    </footer>
+      </section>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <section>
+        <span id="skills" class="anchor"></span>
+        <h2>
+          Professional skills
+        </h2>
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">Programming languages: <i>JavaScript, Python</i></li>
+          <li class="p-list__item is-ticked">Database management systems: <i>MongoDB, PostgreSQL,
+              MySQL, Oracle</i></li>
+          <li class="p-list__item is-ticked">Technologies: <i>Node.js (koa.js, Express, total.js
+              frameworks), Docker, WebGL, React</i></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <section>
+        <span id="teaching" class="anchor"></span>
+        <h2>
+          Technical talks and teaching
+        </h2>
+        <p>
+          Keen on learning new staff and sharing my knowledge.
+          4+ years of teaching and lecturing (“Software architecture”, “Enterprise architecture” and
+          “Operation systems” courses) at the Tomsk State University of Control Systems and Radioelectronics (TUSUR).
+        </p>
+        <p>
+          20+ scientific publications, including those indexed by Scopus and Web of Science.
+          Co-authored the “software engineering” course for students of “Engineer in data processing
+          automation and management systems” specialty at TUSUR.
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <section>
+        <span id="experience" class="anchor"></span>
+        <h2>
+          Work experience
+        </h2>
+        <div class="row">
+
+          <div class="col-6">
+            <div class="p-card">
+              <p>March 2020 &ndash; Now</p>
+              <hr class="u-sv1">
+              <h3 class="p-card__title">
+                Freelancer
+              </h3>
+              <div class="p-card__content">
+                <p>
+                  I've been working on a corporate web service for generating reports on employees' workload
+                  based on a data from 3rd party service.
+                  The service provides employees with a role-based access to real-time data in different reports.
+                </p>
+                <p>
+                  I'm responsible for:
+                </p>
+                <ul class="p-list--divided">
+                  <li class="p-list__item is-ticked">Managing software requirements</li>
+                  <li class="p-list__item is-ticked">Developing the web-service</li>
+                  <li class="p-list__item is-ticked">Deploying and maintaining software in production</li>
+                  <li class="p-list__item is-ticked">Investigating and fixing issues</li>
+                </ul>
+                <p>
+                  Achievements:
+                </p>
+                <ul class="p-list--divided">
+                  <li class="p-list__item is-ticked">Efficiency gains for the customer</li>
+                  <li class="p-list__item is-ticked">Significant financial profit for the customer</li>
+                </ul>
+                <p class="inline-list-heading">
+                  Specialties:
+                </p>
+                <ul class="p-inline-list--middot">
+                  <li class="p-inline-list__item">
+                    Node.js (koa.js)
+                  </li>
+                  <li class="p-inline-list__item">
+                    Docker
+                  </li>
+                  <li class="p-inline-list__item">
+                    React
+                  </li>
+                </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="p-card">
+              <p>December 2017 &ndash; March 2020</p>
+              <hr class="u-sv1">
+              <h3 class="p-card__title">Rubius, full-stack web developer</h3>
+              <div class="p-card__content">
+                <p>
+                  Web developer in an outsourced team.
+                  We built web services for image labeling and generating training sets for Machine Learning tasks.
+                  We processed 10+ terabytes of data and in the peak load our web services handle up to 1200 messages
+                  per
+                  second.
+                </p>
+                <p>
+                  I was responsible for:
+                </p>
+                <ul class="p-list--divided">
+                  <li class="p-list__item is-ticked">Participating in designing software architecture
+                  <li class="p-list__item is-ticked">Developing micro-services</li>
+                  <li class="p-list__item is-ticked">Developing image processing tools (WebGL)</li>
+                  <li class="p-list__item is-ticked">Investigating and fixing issues</li>
+                </ul>
+                <p>
+                  Achievements:
+                </p>
+                <ul class="p-list--divided">
+                  <li class="p-list__item is-ticked">Migrated from monolith to microservices architecture</li>
+                  <li class="p-list__item is-ticked">Migrated frontend from jQuery and Bootstrap to React</li>
+                  <li class="p-list__item is-ticked">95%+ test coverage for all microservices</li>
+                  <li class="p-list__item is-ticked">We fulfilled SLA (99.5% availability) in 25 out of 27 months.</li>
+                </ul>
+                <p class="inline-list-heading">
+                  Specialties:
+                </p>
+                <ul class="p-inline-list--middot">
+                  <li class="p-inline-list__item">
+                    Node.js (koa.js, total.js)
+                  </li>
+                  <li class="p-inline-list__item">
+                    Docker
+                  </li>
+                  <li class="p-inline-list__item">
+                    MongoDB
+                  </li>
+                  <li class="p-inline-list__item">
+                    PostgreSQL
+                  </li>
+                  <li class="p-inline-list__item">
+                    MySQL
+                  </li>
+                  <li class="p-inline-list__item">
+                    React
+                  </li>
+                </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="p-card">
+              <p>September 2013 &ndash; December 2017</p>
+              <hr class="u-sv1">
+              <h3 class="p-card__title">TUSUR, Department of data processing automation, team lead and software engineer
+              </h3>
+              <div class="p-card__content">
+                <p>
+                  Our team developed enterprise web-GIS software.
+                  I was a lead in a team with up to 8 co-workers.
+                </p>
+                <p>
+                  I was responsible for:
+                </p>
+                <ul class="p-list--divided">
+                  <li class="p-list__item is-ticked">Managing requirements</li>
+                  <li class="p-list__item is-ticked">Designing software architecture</li>
+                  <li class="p-list__item is-ticked">Complying with deadlines</li>
+                </ul>
+                <p>
+                  Achievements:
+                </p>
+                <ul class="p-list--divided">
+                  <li class="p-list__item is-ticked">100% of projects completed without delays</li>
+                  <li class="p-list__item is-ticked">Successfully migrated web-GIS from Oracle to PostgreSQL</li>
+                </ul>
+                <p class="inline-list-heading">
+                  Specialties:
+                </p>
+                <ul class="p-inline-list--middot">
+                  <li class="p-inline-list__item">
+                    PostgreSQL (PL/pgSQL)
+                  </li>
+                  <li class="p-inline-list__item">
+                    JavaScript (Dojo)
+                  </li>
+                  <li class="p-inline-list__item">
+                    PHP
+                  </li>
+                </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="row">
+              <div class="p-card">
+                <p>June 2012 &ndash; December 2017</p>
+                <hr class="u-sv1">
+                <h3 class="p-card__title">
+                  Freelancer
+                </h3>
+                <div class="p-card__content">
+                  <p>
+                    Developed corporate websites.
+                    Met with customers and managied product requirements.
+                    Worked on wireframes.
+                    Managed team of up to 5 co-workers.
+                  </p>
+                  <p class="inline-list-heading">
+                    Specialties:
+                  </p>
+                  <ul class="p-inline-list--middot">
+                    <li class="p-inline-list__item">
+                      Node.js
+                    </li>
+                    <li class="p-inline-list__item">
+                      MongoDB
+                    </li>
+                  </ul>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="p-card">
+                <p>September 2011 &ndash; December 2013</p>
+                <hr class="u-sv1">
+                <h3 class="p-card__title">TUSUR, Department of data processing automation, web-developer
+                </h3>
+                <div class="p-card__content">
+                  <p>
+                    Worked on enterprise web-GIS systems. Developed new modules for existing software products.
+                    Wrote technical documentation.
+                  </p>
+                  <p class="inline-list-heading">
+                    Specialties:
+                  </p>
+                  <ul class="p-inline-list--middot">
+                    <li class="p-inline-list__item">
+                      Oracle (PL/SQL)
+                    </li>
+                    <li class="p-inline-list__item">
+                      JavaScript
+                    </li>
+                    <li class="p-inline-list__item">
+                      PHP
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <section>
+        <span id="open-source" class="anchor"></span>
+        <h2>
+          Open Source
+        </h2>
+        <p>
+          I develop the Seabass code editor &ndash; one of the most popular applications for Ubuntu Touch.
+        </p>
+        <p>
+          <img class="p-image--bordered" src="./img/seabass/seabass-desktop.png" alt="Seabass2" />
+        </p>
+        <p class="inline-list-heading">
+          Specialties:
+        </p>
+        <ul class="p-inline-list--middot">
+          <li class="p-inline-list__item">
+            JavaScript
+          </li>
+          <li class="p-inline-list__item">
+            Python
+          </li>
+          <li class="p-inline-list__item">
+            QML
+          </li>
+        </ul>
+        <ul class="p-inline-list--middot">
+          <li class="p-inline-list__item">
+            <a class="p-link--external" href="https://open-store.io/app/seabass2.mikhael">
+              Seabass in the Open Store
+            </a>
+          </li>
+          <li class="p-inline-list__item">
+            <a class="p-link--external" href="https://github.com/milikhin/seabass2">
+              Github
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <section id="contacts">
+        <span id="contacts" class="anchor"></span>
+        <h2>
+          Contacts
+        </h2>
+        <ul class="p-list--divided ">
+          <li class="p-list__item ">
+            Telegram: @mmmikhael
+          </li>
+          <li class="p-list__item ">
+            Email: <a href="mailto:mikhael@milikhin.name ">mikhael@milikhin.name</a>
+          </li>
+          <li class="p-list__item ">
+            Github: <a class="p-link--external " href="https://github.com/milikhin ">@milikhin</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="row">
+      <div class="col-12">
+        &copy; 2020 Mikhail Milikhin, created using <a href="http://vanillaframework.io/">Vanilla Framework</a>
+        <nav role="navigation">
+          <span class="u-off-screen">
+            <a href="#">Go to the top of the page</a>
+          </span>
+        </nav>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

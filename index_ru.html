@@ -2,99 +2,148 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Михаил Милихин. Веб-разработчик и инженер в области разработки ПО</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-1.6.1.min.css" />
-    <style>
-        .p-layout__main {
-            padding: 2rem 0;
-        }
+  <meta charset="utf-8">
+  <title>Михаил Милихин. Веб-разработчик и инженер в области разработки ПО</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-2.17.0.min.css" />
+  <style>
+    /* Fix for an issue with incorrect renderring of middot lists in Firefox */
+    .p-inline-list--middot .p-inline-list__item {
+      display: inline-block;
+    }
 
-        .u-align--justify {
-            text-align: justify;
-        }
+    .p-inline-list--middot .p-inline-list__item::after {
+      top: 0.5em;
+      right: -0.8rem;
+    }
 
-        .p-card__header img.p-card__header__image {
-            max-height: 100%;
-        }
-    </style>
+    /* Thin footer with a top border */
+    .footer {
+      border-top: solid 1px #ccc;
+      padding: 0.5rem 0;
+    }
+
+    /* Make navigation fixed at the top of the page */
+    .p-navigation {
+      position: fixed;
+      width: 100%;
+      border-bottom: solid 1px #ccc;
+    }
+
+    .row--first {
+      padding-top: 4.1rem;
+      /* 3rem (header) + 1.1rem (standard <p> padding) */
+    }
+
+    .anchor {
+      position: relative;
+      top: -3rem;
+    }
+
+    /* add inline headings to inline lists */
+    .inline-list-heading,
+    p:not([class*="p-heading--"]):not([class*="p-muted-heading"]) + p.inline-list-heading {
+      margin: 0;
+      padding: 0 0.5em 0 0;
+      float: left;
+    }
+  </style>
 </head>
 
 <body>
-    <header id="navigation" class="p-navigation">
-        <div class="row">
-            <div class="p-navigation__banner">
-                <div class="p-navigation__logo">
-                    <a class="p-navigation__link" href="#">
-                  		Михаил Милихин
-                	</a>
-                </div>
-                <a href="#navigation" class="p-navigation__toggle--open" title="menu">Меню</a>
-                <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">закрыть меню</a>
-            </div>
-            <nav class="p-navigation__nav" role="menubar">
-                <span class="u-off-screen">
-        			<a href="#">К началу страницы</a>
-      			</span>
-                <ul class="p-navigation__links" role="menu">
-                    <li class="p-navigation__link"><a href="./index.html">English</a></li>
-                    <!-- <li class="p-navigation__link"><a href="#">Обо мне</a></li>
-                    <li class="p-navigation__link"><a href="#contacts">Контакты</a></li> -->
-                </ul>
-            </nav>
+  <header id="navigation" class="p-navigation">
+    <div class="p-navigation__row">
+      <div class="p-navigation__banner">
+        <div class="p-navigation__logo">
+          <a class="p-navigation__item" href="#"
+            style="line-height: 1.5rem; font-size: large; color: #111; padding: 0.75rem 1rem 0.75rem 0;">
+            Михаил Милихин
+          </a>
         </div>
-    </header>
-    <div class="row">
-        <div class="col-12 p-layout__main">
-            <section class="about-me u-clearfix" id="about">
-                <h2>
-                    Обо мне
-                </h2>
-                <div class="row">
-                    <div class="col-6">
-                        <p>
-                            Привет, я Михаил, веб-разработчик и инженер в области разработки ПО из Томска.
-                        </p>
-                        <p>
-                            У меня есть 7 лет опыта веб-разработки и 3 года опыта руководства проектами разного масштаба: от страниц приземления и небольших
-                            сайтов до крупных проектов уровня корпоративных геоинформационных систем промышленных предприятий.
-                        </p>
-                    </div>
-                    <div class="col-6">
-                        <p>
-                            <img class="p-image--bordered" src="./me.jpg" alt="Me" />
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <section id="contacts">
-                <h2>
-                    Контакты
-                </h2>
-                <ul class="p-list--divided">
-                    <li class="p-list__item">
-                        Telegram: @mmmikhael
-                    </li>
-                    <li class="p-list__item">
-                        Email: <a href="mailto:mikhael@milikhin.name">mikhael@milikhin.name</a>
-                    </li>
-                    <li class="p-list__item">
-                        Github: <a class="p-link--external" href="https://github.com/milikhin">@milikhin</a>
-                    </li>
-                </ul>
-            </section>
-        </div>
-
+        <a href="#navigation" class="p-navigation__toggle--open" title="menu">Меню</a>
+        <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Закрыть меню</a>
+      </div>
+      <nav class="p-navigation__nav">
+        <span class="u-off-screen">
+          <a href="#main-content">Перейти к содержимому страницы</a>
+        </span>
+        <ul class="p-navigation__items" role="menu">
+          <li class="p-navigation__item" role="menuitem">
+            <a class="p-navigation__link" href="index.html">English</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <footer class="p-footer" role="contentinfo">
+  </header>
+
+  <div class="row row--first">
+    <div class="col-12">
+      <section id="about">
+        <h2>
+          Обо мне
+        </h2>
         <div class="row">
-            &copy; 2020 Михаил Милихин, сделано с использованием <a class="p-link--external" href="http://docs.vanillaframework.io/">Vanilla Framework</a>
-            <span class="u-off-screen">
-              	<a href="#">Наверх</a>
-            </span>
+          <div class="col-7">
+            <p>
+              Привет, я Михаил, веб-разработчик и инженер в области разработки ПО из Калининграда.
+            </p>
+            <p>
+              Я люблю веб и увлечен созданием надежного и поддерживаемого ПО.
+              В то же время, понимаю важность бизнес-требований и приоритезации задач клиентов над технологиями.
+            </p>
+            <p>
+              У меня есть 9 лет опыта веб-разработки и 3 года опыта руководства проектами разного масштаба:
+              от небольших сайтов до крупных проектов уровня
+              корпоративных геоинформационных систем промышленных предприятий.
+            </p>
+            <p>
+              Более подробную информацию обо мне Вы можете найти на <a href="index.html">англоязычной странице</a>.
+            </p>
+          </div>
+          <div class="col-5">
+            <p>
+              <img class="p-image--bordered" src="./img/me.jpg" alt="Me" />
+            </p>
+          </div>
         </div>
-    </footer>
+      </section>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <section id="contacts">
+        <span id="contacts" class="anchor"></span>
+        <h2>
+          Контакты
+        </h2>
+        <ul class="p-list--divided ">
+          <li class="p-list__item ">
+            Telegram: @mmmikhael
+          </li>
+          <li class="p-list__item ">
+            Email: <a href="mailto:mikhael@milikhin.name ">mikhael@milikhin.name</a>
+          </li>
+          <li class="p-list__item ">
+            Github: <a class="p-link--external " href="https://github.com/milikhin ">@milikhin</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="row">
+      <div class="col-12">
+        &copy; 2020 Михаил Милихин, сделано с использованием <a href="http://vanillaframework.io/">Vanilla Framework</a>
+        <nav role="navigation">
+          <span class="u-off-screen">
+            <a href="#">Go to the top of the page</a>
+          </span>
+        </nav>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
