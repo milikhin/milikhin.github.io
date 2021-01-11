@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-2.17.0.min.css" />
   <style>
     /* Fix for an issue with incorrect rendering of middot lists in Firefox */
+    .p-inline-list--middot {
+      line-height: 1.5rem;
+    }
+
     .p-inline-list--middot .p-inline-list__item {
       display: inline-block;
     }
@@ -126,7 +130,7 @@
           Professional skills
         </h2>
         <ul class="p-list">
-          <li class="p-list__item is-ticked">Programming languages: <i>JavaScript, Python</i></li>
+          <li class="p-list__item is-ticked">Programming languages: <i>JavaScript, TypeScript, Python</i></li>
           <li class="p-list__item is-ticked">Database management systems: <i>MongoDB, PostgreSQL,
               MySQL, Oracle</i></li>
           <li class="p-list__item is-ticked">Technologies: <i>Node.js (koa.js, Express, total.js
@@ -164,10 +168,48 @@
           Work experience
         </h2>
         <div class="row">
+          <div class="col-6">
+            <div class="p-card">
+              <p>October 2020 &ndash; now</p>
+              <hr class="u-sv1">
+              <h3 class="p-card__title">Rubius, lead frontend developer</h3>
+              <div class="p-card__content">
+                <p>
+                  Lead frontend developer in a startup project (pattern recognition).
+                </p>
+                <p>
+                  I'm responsible for:
+                </p>
+                <ul class="p-list--divided">
+                  <li class="p-list__item is-ticked">Delivering SPA platform for a data analisys web-service</li>
+                  <li class="p-list__item is-ticked">Participating in UX design processes</li>
+                  <li class="p-list__item is-ticked">Mentoring junior developers</li>
+                </ul>
+                <p>
+                  Achievements:
+                </p>
+                <ul class="p-list--divided">
+                  <li class="p-list__item is-ticked">95%+ test coverage for the SPA logic</li>
+                </ul>
+                <p class="inline-list-heading">
+                  Specialties:
+                </p>
+                <ul class="p-inline-list--middot">
+                  <li class="p-inline-list__item">
+                    React
+                  </li>
+                  <li class="p-inline-list__item">
+                    Typescript
+                  </li>
+                </ul>
+                </p>
+              </div>
+            </div>
+          </div>
 
           <div class="col-6">
             <div class="p-card">
-              <p>March 2020 &ndash; Now</p>
+              <p>March 2020 &ndash; October 2020</p>
               <hr class="u-sv1">
               <h3 class="p-card__title">
                 Freelancer
@@ -179,20 +221,18 @@
                   The service provides employees with a role-based access to real-time data in different reports.
                 </p>
                 <p>
-                  I'm responsible for:
+                  I was responsible for:
                 </p>
                 <ul class="p-list--divided">
                   <li class="p-list__item is-ticked">Managing software requirements</li>
                   <li class="p-list__item is-ticked">Developing the web-service</li>
                   <li class="p-list__item is-ticked">Deploying and maintaining software in production</li>
-                  <li class="p-list__item is-ticked">Investigating and fixing issues</li>
                 </ul>
                 <p>
                   Achievements:
                 </p>
                 <ul class="p-list--divided">
-                  <li class="p-list__item is-ticked">Efficiency gains for the customer</li>
-                  <li class="p-list__item is-ticked">Significant financial profit for the customer</li>
+                  <li class="p-list__item is-ticked">Efficiency gains and financial profit for the customer</li>
                 </ul>
                 <p class="inline-list-heading">
                   Specialties:
@@ -230,7 +270,7 @@
                   I was responsible for:
                 </p>
                 <ul class="p-list--divided">
-                  <li class="p-list__item is-ticked">Participating in designing software architecture
+                  <li class="p-list__item is-ticked">Participating in designing software architecture</li>
                   <li class="p-list__item is-ticked">Developing micro-services</li>
                   <li class="p-list__item is-ticked">Developing image processing tools (WebGL)</li>
                   <li class="p-list__item is-ticked">Investigating and fixing issues</li>
@@ -347,33 +387,32 @@
                 </div>
               </div>
             </div>
-
-            <div class="row">
-              <div class="p-card">
-                <p>September 2011 &ndash; September 2013</p>
-                <hr class="u-sv1">
-                <h3 class="p-card__title">TUSUR, Department of data processing automation, web-developer
-                </h3>
-                <div class="p-card__content">
-                  <p>
-                    Worked on enterprise web-GIS systems. Developed new modules for existing software products.
-                    Wrote technical documentation.
-                  </p>
-                  <p class="inline-list-heading">
-                    Specialties:
-                  </p>
-                  <ul class="p-inline-list--middot">
-                    <li class="p-inline-list__item">
-                      Oracle (PL/SQL)
-                    </li>
-                    <li class="p-inline-list__item">
-                      JavaScript
-                    </li>
-                    <li class="p-inline-list__item">
-                      PHP
-                    </li>
-                  </ul>
-                </div>
+          </div>
+          <div class="col-6">
+            <div class="p-card">
+              <p>September 2011 &ndash; September 2013</p>
+              <hr class="u-sv1">
+              <h3 class="p-card__title">TUSUR, Department of data processing automation, web-developer
+              </h3>
+              <div class="p-card__content">
+                <p>
+                  Worked on enterprise web-GIS systems. Developed new modules for existing software products.
+                  Wrote technical documentation.
+                </p>
+                <p class="inline-list-heading">
+                  Specialties:
+                </p>
+                <ul class="p-inline-list--middot">
+                  <li class="p-inline-list__item">
+                    Oracle (PL/SQL)
+                  </li>
+                  <li class="p-inline-list__item">
+                    JavaScript
+                  </li>
+                  <li class="p-inline-list__item">
+                    PHP
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -451,9 +490,9 @@
     <div class="row">
       <div class="col-12">
         <p>
-          &copy; 2020 Mikhail Milikhin, created using <a href="http://vanillaframework.io/">Vanilla Framework</a>
+          &copy; 2021 Mikhail Milikhin, created using <a href="http://vanillaframework.io/">Vanilla Framework</a>
           <br />
-          <small>p.s: are you looking for a good UX designer? <a class="p-link--external" href="http://juliazakharchenko.tilda.ws/">I know one!</a></small>
+          <small>p.s: looking for a good UX designer? <a class="p-link--external" href="https://www.behance.net/jeyza">I know one!</a></small>
         </p>
         <nav role="navigation">
           <span class="u-off-screen">
